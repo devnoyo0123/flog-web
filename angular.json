@@ -38,6 +38,12 @@
             "styles": [
               "src/styles.less"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles.less",
+                "src/app/post-list/post-list.component.less"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

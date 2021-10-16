@@ -14,6 +14,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { PostListComponent } from './post-list/post-list.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import {NzSelectModule} from "ng-zorro-antd/select";
 registerLocaleData(ko);
 
 @NgModule({
@@ -27,6 +28,7 @@ registerLocaleData(ko);
     HttpClientModule,
     BrowserAnimationsModule,
     NzCardModule,
+    NzSelectModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: ko_KR }],
   bootstrap: [AppComponent],

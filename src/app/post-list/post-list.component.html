@@ -1,12 +1,31 @@
 <!--header-->
-<div>top</div>
+<!--헤더는 나중에 별도로 분리필요-->
+<div class="header">
+  <div class="logo-box">flog</div>
+  <div class="right-box">
+    <div class="search-box">
+      <i nz-icon nzType="search" nzTheme="outline"></i>
+    </div>
+    <div class="btn-login">로그인</div>
+  </div>
+</div>
 
 <!--menus-->
-<div>selector</div>
+<div class="menus">
+  <div class="item selectable-box active"><i nz-icon nzType="rise" nzTheme="outline"></i>트렌딩</div>
+  <div class="item selectable-box"><i nz-icon nzType="clock-circle" nzTheme="outline"></i>최신</div>
+  <div class="item">
+    <nz-select [(ngModel)]="selectedPeriod">
+      <nz-option *ngFor="let period of periodTypes" [nzValue]="period.value" [nzLabel]="period.label"></nz-option>
+    </nz-select>
+  </div>
+</div>
 
 <!--post-list-->
-<div nz-row [nzGutter]="[32, 32]">
-  <div nz-col [nzSpan]="6" *ngFor="let item of items">
-    <app-post></app-post>
+<div class="list-box">
+  <div nz-row [nzGutter]="[32, 32]">
+    <div nz-col class="gutter-row" [nzSpan]="6" *ngFor="let item of items">
+      <app-post></app-post>
+    </div>
   </div>
 </div>
