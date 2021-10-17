@@ -1,11 +1,30 @@
-<div>
-  <a class="thumbnail" href="/@haero_kim/쏘카-두나무-카카오VX-면접-후기">
-    <div style="padding-top: 52.1921%">
-      <img
-        src="https://media.vlpt.us/images/haero_kim/post/cd5341fe-6ada-4c75-b888-0c1b340a0d1b/면접후기png.png?w=640"
-      />
+<div *ngIf="post" [(ngModel)]="post">
+  <a class="thumbnail" href="/">
+    <div>
+      <img [src]="post.thumbnail" />
     </div>
   </a>
-  <p>Title Here</p>
-  <p>createdAt, comments Here</p>
+  <div class="content">
+    <div class="title">
+      <h4>{{ post.title }}</h4>
+    </div>
+    <div class="body">
+      <p>{{ getShorteningContent(post.content) }}</p>
+    </div>
+    <div class="sub-info">
+      <span>{{ post.createdAt | date: 'yyyy년 MM월 dd일' }}</span>
+      <span class="separator">·</span>
+      <span>{{ post.comments.length }}개의 댓글</span>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="userinfo">
+      <img [src]="post.user.thumbnail" />
+      <span>
+        by
+        <b>{{ post.user.name }}</b>
+      </span>
+    </div>
+    <div class="likes"><i nz-icon nzType="heart" nzTheme="fill"></i>{{ post.user.likes }}</div>
+  </div>
 </div>
