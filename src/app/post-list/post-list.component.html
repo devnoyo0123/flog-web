@@ -1,23 +1,9 @@
-<!--header-->
-<!--헤더는 나중에 별도로 분리필요-->
-<div class="header">
-  <div class="logo-box">flog</div>
-  <div class="right-box">
-    <div class="search-box">
-      <i nz-icon nzType="search" nzTheme="outline"></i>
-    </div>
-    <div class="btn-login">
-      <a (click)="onLogin($event)">로그인</a>
-    </div>
-  </div>
-</div>
-
 <!--menus-->
 <div class="menus">
   <div class="item selectable-box active"><i nz-icon nzType="rise" nzTheme="outline"></i>트렌딩</div>
   <div class="item selectable-box"><i nz-icon nzType="clock-circle" nzTheme="outline"></i>최신</div>
   <div class="item">
-    <nz-select [(ngModel)]="selectedPeriod" ngDefaultControl>
+    <nz-select [(ngModel)]="selectedPeriod">
       <nz-option *ngFor="let period of periodTypes" [nzValue]="period.value" [nzLabel]="period.label"></nz-option>
     </nz-select>
   </div>
@@ -25,9 +11,7 @@
 
 <!--post-list-->
 <div class="list-box">
-  <div nz-row [nzGutter]="[32, 32]">
-    <div nz-col ngFlex="flex-wrap" class="gutter-row" *ngFor="let post of posts">
-      <app-post [post]="post"></app-post>
-    </div>
+  <div class="post-list">
+    <app-post [post]="post" *ngFor="let post of posts" (click)="goToPostDetail(post)"></app-post>
   </div>
 </div>

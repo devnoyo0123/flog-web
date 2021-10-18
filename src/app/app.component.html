@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<!--header-->
+<div class="header">
+  <div class="logo-box" routerLink="/">flog</div>
+  <div class="right-box">
+    <div class="search-box">
+      <i nz-icon nzType="search" nzTheme="outline"></i>
+    </div>
+    <div class="btn-login">
+      <a (click)="onLogin()">로그인</a>
+    </div>
+  </div>
+</div>
+
+<!--content-->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
