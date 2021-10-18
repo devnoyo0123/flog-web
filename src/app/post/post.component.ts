@@ -11,7 +11,7 @@ export class PostComponent {
   constructor() {}
 
   getShorteningContent(content: string) {
-    console.log(content);
+    // console.log(content);
     const [shortenContent] = content.split('\\n');
     return shortenContent;
   }

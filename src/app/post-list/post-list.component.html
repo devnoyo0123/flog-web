@@ -6,7 +6,9 @@
     <div class="search-box">
       <i nz-icon nzType="search" nzTheme="outline"></i>
     </div>
-    <div class="btn-login">로그인</div>
+    <div class="btn-login">
+      <a (click)="onLogin($event)">로그인</a>
+    </div>
   </div>
 </div>
 
@@ -15,7 +17,7 @@
   <div class="item selectable-box active"><i nz-icon nzType="rise" nzTheme="outline"></i>트렌딩</div>
   <div class="item selectable-box"><i nz-icon nzType="clock-circle" nzTheme="outline"></i>최신</div>
   <div class="item">
-    <nz-select [(ngModel)]="selectedPeriod">
+    <nz-select [(ngModel)]="selectedPeriod" ngDefaultControl>
       <nz-option *ngFor="let period of periodTypes" [nzValue]="period.value" [nzLabel]="period.label"></nz-option>
     </nz-select>
   </div>

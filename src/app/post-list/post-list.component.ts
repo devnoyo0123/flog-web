@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PeriodKind } from './interfaces/period-kind';
 import { Post } from '../post/interfaces/post.schema';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalLoginComponentComponent } from '../nz-modal-login-component/nz-modal-login-component.component';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.less'],
 })
-export class PostListComponent {
+export class PostListComponent implements OnInit {
   selectedPeriod: 'day' | 'week' | 'month' | 'year' | undefined;
   posts: Post[] = [];
   periodTypes: PeriodKind[] = [
@@ -17,7 +19,7 @@ export class PostListComponent {
     { value: 'year', label: '올해' },
   ];
 
-  constructor() {}
+  constructor(private modalService: NzModalService) {}
 
   ngOnInit() {
     const [firstKindOfPeriod] = this.periodTypes;
@@ -57,5 +59,13 @@ export class PostListComponent {
       },
     ];
     this.posts = [...this.posts, ...loadedPosts];
+  }
+
+  onLogin() {
+    this.modalService.create({
+      nzContent: NzModalLoginComponentComponent,
+      nzTitle: '로그인',
+      nzFooter: null,
+    });
   }
 }

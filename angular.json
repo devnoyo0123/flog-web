@@ -36,12 +36,14 @@
               }
             ],
             "styles": [
+              "./node_modules/quill/dist/quill.core.css",
+              "./node_modules/quill/dist/quill.bubble.css",
+              "./node_modules/quill/dist/quill.snow.css",
               "src/styles.less"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/styles.less",
-                "src/app/post-list/post-list.component.less"
+                "src/styles.less"
               ]
             },
             "scripts": []
@@ -70,9 +72,9 @@
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
+              "optimization": false,
               "sourceMap": true,
               "namedChunks": true
             }

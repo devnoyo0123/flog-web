@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## debugging angular
+
+1. 중단점 (breakpoint)를 코드에 세팅합니다.
+2. npm run start나 Angular Cli로 development server가 준비되게 합니다.
+3. Angular Application 설정을 두고 debug 버튼을 클릭합니다. ( 새로운 브라우저 창이 뜰겁니다.)
+https://www.jetbrains.com/help/idea/angular.html#angular_running_and_debugging_debug
+
+
+### quill issue
+https://github.com/KillerCodeMonkey/ngx-quill/issues/882
+
+### quill configuration in angular.json (css)
+https://github.com/KillerCodeMonkey/ngx-quill-example/blob/master/angular.json

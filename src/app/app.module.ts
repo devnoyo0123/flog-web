@@ -15,16 +15,22 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { PostListComponent } from './post-list/post-list.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzModalLoginComponentComponent } from './nz-modal-login-component/nz-modal-login-component.component';
+import { SharedModule } from './shared/shared.module';
+import { AddPostComponent } from './add-post/add-post.component';
+import { QuillModule } from 'ngx-quill';
 registerLocaleData(ko);
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, PostListComponent],
+  declarations: [AppComponent, PostComponent, PostListComponent, NzModalLoginComponentComponent, AddPostComponent],
   imports: [
     NzGridModule,
     NzIconModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    QuillModule.forRoot(),
+    SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NzCardModule,

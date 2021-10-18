@@ -1,0 +1,21 @@
+<section>
+  <form nz-form [formGroup]="validateForm">
+    <header>
+      <nz-form-item>
+        <nz-form-control>
+          <input nz-input name="title" id="title" placeholder="제목을 입력하세요" formControlName="title" />
+        </nz-form-control>
+      </nz-form-item>
+    </header>
+    <article>
+      <!--      <quill-editor formControlName="editor" ngDefaultControl [sanitize]="true"></quill-editor>-->
+      <quill-editor #editor placeholder="당신의 이야기를 적어보세요..." formControlName="editor"></quill-editor>
+    </article>
+    <footer>
+      <div nz-row class="login-form">
+        <button nz-col nzSpan="8" nz-button class="login-form__button--left"><- 나가기</button>
+        <button nz-col nzSpan="8" nzOffset="8" nz-button class="login-form__button--right">저장</button>
+      </div>
+    </footer>
+  </form>
+</section>
