@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Post } from './interfaces/post.schema';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -8,11 +9,11 @@ import { Post } from './interfaces/post.schema';
 })
 export class PostComponent {
   @Input() post: Post | undefined;
-  constructor() {}
+  constructor(private router: Router) {}
 
   getShorteningContent(content: string) {
-    console.log(content);
     const [shortenContent] = content.split('\\n');
     return shortenContent;
   }
+
 }

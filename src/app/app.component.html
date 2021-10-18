@@ -1,1 +1,15 @@
-<app-post-list></app-post-list>
+<!--header-->
+<div class="header">
+  <div class="logo-box" routerLink="/">flog</div>
+  <div class="right-box">
+    <div class="search-box">
+      <i nz-icon nzType="search" nzTheme="outline"></i>
+    </div>
+    <div class="btn-login">로그인</div>
+  </div>
+</div>
+
+<!--content-->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

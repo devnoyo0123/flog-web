@@ -15,10 +15,13 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { PostListComponent } from './post-list/post-list.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NewLineToBrPipe } from './post-detail/pipes/new-line-to-br.pipe';
 registerLocaleData(ko);
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, PostListComponent],
+  declarations: [NewLineToBrPipe, AppComponent, PostComponent, PostListComponent, PostDetailComponent],
   imports: [
     NzGridModule,
     NzIconModule,
@@ -29,6 +32,7 @@ registerLocaleData(ko);
     BrowserAnimationsModule,
     NzCardModule,
     NzSelectModule,
+    NzSpinModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: ko_KR }],
   bootstrap: [AppComponent],

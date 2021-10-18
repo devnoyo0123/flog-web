@@ -1,5 +1,5 @@
-<div *ngIf="post" [(ngModel)]="post">
-  <a class="thumbnail" href="/">
+<div *ngIf="post" [(ngModel)]="post" ngDefaultControl>
+  <a class="thumbnail">
     <div>
       <img [src]="post.thumbnail" />
     </div>

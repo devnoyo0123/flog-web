@@ -1,0 +1,33 @@
+<nz-spin [nzSpinning]="!isLoadedPost" ngSize="large">
+  <div class="wrapper" *ngIf="post">
+    <div class="header">
+      <h1>{{ post.title }}</h1>
+      <div class="user-info">
+        <div class="information">
+          <span class="username"
+            ><a [href]="'/@' + post.user.name">{{ post.user.name }}</a></span
+          ><span class="separator">·</span><span>{{ post.createdAt | date: 'yyyy년 MM월 dd일' }}</span>
+        </div>
+      </div>
+
+      <!--left sticky-->
+      <div class="left-sticky">
+        <div>
+          <div class="like">
+            <i nz-icon nzType="heart" nzTheme="outline"></i>
+          </div>
+          <div class="count">0</div>
+          <div class="link-share">
+            <div>
+              <i nz-icon nzType="share-alt" nzTheme="outline"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="content" [innerHTML]="post.content | nl2br"></div>
+    </div>
+  </div>
+</nz-spin>

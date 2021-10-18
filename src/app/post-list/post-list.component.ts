@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PeriodKind } from './interfaces/period-kind';
 import { Post } from '../post/interfaces/post.schema';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.less'],
 })
-export class PostListComponent {
+export class PostListComponent implements OnInit {
   selectedPeriod: 'day' | 'week' | 'month' | 'year' | undefined;
   posts: Post[] = [];
   periodTypes: PeriodKind[] = [
@@ -17,7 +18,7 @@ export class PostListComponent {
     { value: 'year', label: '올해' },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     const [firstKindOfPeriod] = this.periodTypes;
@@ -57,5 +58,10 @@ export class PostListComponent {
       },
     ];
     this.posts = [...this.posts, ...loadedPosts];
+  }
+
+  goToPostDetail(post: Post) {
+    post.id = 1;
+    this.router.navigate([`/post/${post.id}`]);
   }
 }
